@@ -29,6 +29,7 @@ body {
   height: 25px;
   padding: 3px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 hr {
@@ -46,6 +47,14 @@ hr {
   cursor: pointer;
 }
 
+.accordion-plus:hover {
+  transform: rotate(45deg);
+}
+
+.accordion-block:hover > .accordion-plus {
+  transform: rotate(45deg);
+}
+
 .accordion-plus:hover + .accordion-meme {
   transition: all 1s;
   height: 400px;
@@ -58,7 +67,30 @@ hr {
   opacity: 1;
 }
 
-.accordion-block:hover + .accordion-meme {
-  height: auto;
+.accordion-block:hover > .accordion-meme {
+  transition: all 1s;
+  height: 400px;
   opacity: 1;
+}
+
+label {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+input:checked ~ .accordion-meme {
+  height: 400px;
+  opacity: 1;
+}
+
+input:checked ~ .accordion-plus {
+  transform: rotate(45deg);
 }
