@@ -39,12 +39,13 @@ hr {
 .accordion-meme {
   overflow: hidden;
   opacity: 0;
-  width: 100%;
+  width: 50%;
   height: 400px;
   margin: 0 auto;
   height: 0;
   transition: all 1s;
   cursor: pointer;
+  margin: 0 300px 0;
 }
 
 .accordion-plus:hover {
@@ -55,13 +56,13 @@ hr {
   transform: rotate(45deg);
 }
 
-.accordion-plus:hover + .accordion-meme {
+.accordion-meme:hover {
   transition: all 1s;
   height: 400px;
-  opacity: 1;
+  opacity: 0.5 !important;
 }
 
-.accordion-meme:hover {
+.accordion-plus:hover + .accordion-meme {
   transition: all 1s;
   height: 400px;
   opacity: 1;
@@ -89,8 +90,29 @@ input {
 input:checked ~ .accordion-meme {
   height: 400px;
   opacity: 1;
+  animation-name: click;
+  animation-duration: 3s;
+}
+
+input:checked ~ .accordion-plus {
+  animation-name: click;
+  animation-duration: 3s;
+}
+
+input:checked ~ h2 {
+  animation-name: click;
+  animation-duration: 3s;
 }
 
 input:checked ~ .accordion-plus {
   transform: rotate(45deg);
+}
+
+@keyframes click {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
