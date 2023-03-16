@@ -37,7 +37,7 @@ body {
 .accordion-meme {
   overflow: hidden;
   opacity: 0;
-  width: 80%;
+  width: 25em;
   height: 25em;
   margin: 0 auto;
   height: 0;
@@ -52,6 +52,11 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.accordion-desc {
+  transition: 0.3s;
+  width: 85%;
 }
 
 .radioBtn {
@@ -125,5 +130,9 @@ body {
     transition: all 1s;
     height: 25em;
     opacity: 1;
+  }
+
+  .accordion-block:hover > .accordion-desc {
+    color: #0059d9;
   }
 }
